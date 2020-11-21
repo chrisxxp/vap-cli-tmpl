@@ -1,0 +1,273 @@
+/**app.wxss**/
+@import "/assets/css/iconfont.wxss";
+
+page {
+  font-size: 28rpx;
+  /* color: #333; */
+  color: #323232;
+  background: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-color {
+  color: #FF5501;
+}
+
+.theme-bg-color {
+  background-color: #FF5501;
+}
+
+input::webkit-input-placeholder {
+  color: #C8C8C8;
+}
+
+/* 干掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+view,text,scroll-view{
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu
+}
+
+.text-overflow_1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-overflow_2 {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 按钮添加点击效果 */
+.btn-hover{
+  position: relative;
+  top: 3rpx;
+  box-shadow:0px 0px 8rpx #999 inset; 
+}
+
+.view-hover{
+  position: relative;
+  top: 3rpx;
+}
+
+/* 镂空按钮 点击阴影不宜太深 */
+.plain-hover{
+  box-shadow:0px 0px 10rpx #bbbec4 inset; 
+}  
+
+.normal-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  font-size: 34rpx;
+  color: #fff;
+  border-radius: 4rpx;
+}
+
+/* .border-bottom {
+  border-bottom: 1rpx solid #eee;
+}
+.border {
+  border: 1rpx solid #eee;
+} */
+/* 边框1像素 */
+.border_t,.border_b,.border_r,.border_l{
+  position: relative;
+}
+.border_t::before,.border_b::before{
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1rpx;
+  background-color: #B3B3B3;
+  transform: scaleY(0.5);
+}
+.border_t::before{
+  top: 0;
+}
+.border_b::before{
+  bottom: 0;
+}
+
+.empty {
+  text-align:center;
+  line-height:30vh;
+  opacity:.7;
+}
+.empty:before {
+  content:"暂无内容";
+}
+
+.border_r:after,.border_l:after{
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 1rpx;
+  height: 100%;
+  background-color: #B3B3B3;
+  transform: scaleX(0.5);
+}
+.border_r:after{
+  right: 0;
+}
+.border_l:after{
+  left: 0;
+}
+/* end 边框1像素 */
+
+.pubBtn{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 34rpx;
+	color: #fff;
+	width: 710rpx !important;
+	height: 88rpx;
+	background: rgba(47,51,63,1);
+	border-radius: 8rpx;
+	font-weight: normal;
+}
+.BGShadow{
+  background:#fff;
+  box-shadow:0px 0px 16rpx 0px rgba(0,0,0,0.12);
+  border-radius:8rpx;
+  margin-bottom: 16rpx;
+}
+
+.common-text {
+  font-size: 45rpx;
+  color: #E64728;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.weui-mask {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: all 0.3s ease-in;
+}
+
+.weui-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.dialog_mask {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 666;
+  position: fixed;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.weui-mask.weui-mask_hidden {
+  opacity: 0;
+  transform: scale3d(1, 1, 0);
+}
+
+.dialog_container {
+  width: 670rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0px 0px 16rpx 0px rgba(0, 0, 0, 0.12);
+  color: #323232;
+  font-size: 28rpx;
+}
+
+.dialog_user {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog_user--img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 72rpx 0 16rpx;
+}
+
+.dialog_user--name {
+  color: #323232;
+  font-size: 28rpx;
+}
+
+.dialog_desc {
+  display: flex;
+  flex-direction: column;
+  margin: 48rpx 0 72rpx;
+}
+
+.diaglo_btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diaglo_btns>button {
+  width: 500rpx !important;
+  height: 88rpx;
+  border-radius: 8rpx;
+  color: #A7A7A7;
+  font-size: 34rpx;
+  background-color: #fff;
+  font-weight: normal;
+}
+
+.diaglo_btns .diaglo_btns--confirm {
+  background: #FF5501;
+  color: #fff;
+}
+
+.diaglo_btns .diaglo_btns--cancel {
+  margin: 10rpx 0 20rpx;
+}
